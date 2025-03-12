@@ -1,0 +1,8 @@
+streamlit
+networkx
+matplotlib 
+seaborn
+scipy
+nltk
+wordcloud
+google-genai
