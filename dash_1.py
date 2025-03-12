@@ -24,7 +24,7 @@ sia = SentimentIntensityAnalyzer()
 
 def generate_summary_with_gemini(prompt):
   
-    api_key = 'AIzaSyDXx7NJnXY0BUkRDP_uq-oItpUtKf8eo7g'
+    api_key = ''
     client = genai.Client(api_key=api_key)
     response = client.models.generate_content(
         model="gemini-1.5-pro",
