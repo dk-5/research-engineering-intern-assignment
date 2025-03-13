@@ -246,7 +246,7 @@ else:
     st.write("No data available for the specified query.")
 
 
-st.header("Overall Keyword Analysis")
+
 political_data = filter_political_posts(data, political_terms)
 
 
@@ -256,7 +256,7 @@ political_keywords = extract_keywords(political_data)
 if political_keywords:
    
     
-    st.subheader("Political Word Cloud")
+    st.subheader(" Word Cloud")
     pol_wordcloud = generate_wordcloud(political_keywords)
     if pol_wordcloud:
         plt.figure(figsize=(10, 5))
