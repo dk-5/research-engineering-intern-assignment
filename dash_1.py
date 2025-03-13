@@ -17,14 +17,33 @@ from google import genai
 import os 
 
 
-nltk.download('stopwords')
-nltk.download('vader_lexicon')
+def setup_nltk_resources():
+    # Check and download stopwords if not present
+    try:
+        nltk.data.find('corpora/stopwords')
+    except LookupError:
+        nltk.download('stopwords', quiet=True)
+    
+    # Check and download VADER lexicon if not present
+    try:
+        nltk.data.find('sentiment/vader_lexicon')
+    except LookupError:
+        nltk.download('vader_lexicon', quiet=True)
+    
+    return "NLTK resources are ready."
+
+# Call this once at startup
+setup_nltk_resources()
 sia = SentimentIntensityAnalyzer()
 
 
 def generate_summary_with_gemini(prompt):
   
-    api_key = ''
+    try:
+        api_key = st.secrets["GEMINI_API_KEY"]
+    except KeyError:
+        st.error("Gemini API key not found. Please set it in your Streamlit Cloud secrets.")
+        return "No summary available due to missing API key."
     client = genai.Client(api_key=api_key)
     response = client.models.generate_content(
         model="gemini-1.5-pro",
