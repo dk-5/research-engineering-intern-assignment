@@ -7,4 +7,3 @@ Network Visualization: Mapping the relationships between authors and subreddits 
 Sentiment Analysis: Evaluating the emotional tone of political posts to quantify public sentiment.
 Narrative Summarization: Leveraging Gemini LLM to generate concise summaries that contextualize the quantitative insights.
 
-![alt text](ss_10.png) ![alt text](ss_9.png) ![alt text](ss_8.png) ![alt text](ss_7.png) ![alt text](ss_6.png) ![alt text](ss_5.png) ![alt text](ss_4.png) ![alt text](ss_3.png) ![alt text](ss_2.png) ![alt text](ss_1.png)
